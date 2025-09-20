@@ -1,0 +1,33 @@
+Primer Proyecto de Programación de Computadores
+
+Desarrolla un programa en Python que gestione una biblioteca de canciones. Cada canción debe
+incluir información como el nombre, el artista, el año de lanzamiento, la duración, el género musical
+y el idioma. El programa debe comenzar con una lista predefinida de 5 canciones y permitir al
+usuario interactuar con la biblioteca a través de un menú de opciones.
+Especificaciones del Programa:
+1. Estructura de la Canción: Cada canción estará representada como un diccionario con las
+siguientes llaves:
+• Nombre
+• Artista
+• Año
+• Duración (en formato mm:ss)
+• Género
+• Idioma
+2. Inicialización del Programa:
+• El programa debe comenzar con 5 canciones predefinidas ya almacenadas en la
+biblioteca.
+
+3. Funcionalidades del Programa:
+• Agregar una Canción: El usuario podrá agregar una nueva canción a la biblioteca
+proporcionando la información requerida (nombre, artista, año, duración, género e
+idioma).
+• Borrar una Canción: El usuario podrá borrar una canción existente de la biblioteca,
+especificando el nombre de la canción a eliminar.
+• Buscar Canciones: El usuario podrá buscar canciones en la biblioteca por Nombre,
+Artista, Año o Género. El programa mostrará una lista de las canciones que coincidan
+con el criterio de búsqueda.
+• Mostrar el Tiempo Total de las Canciones: El programa calculará y mostrará el tiempo
+total de todas las canciones almacenadas en la biblioteca en formato mm:ss.
+
+El proyecto debe ser entregado por medio de GitHub a más tardar el sábado 20 de septiembre a
+las 11:59:59 pm.

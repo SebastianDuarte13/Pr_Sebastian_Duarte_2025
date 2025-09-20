@@ -1,0 +1,52 @@
+[
+    {
+        "nombre": "hooka",
+        "artista": "luigi 21 plus",
+        "año": 2019,
+        "duracion": [
+            "02:00"
+        ],
+        "genero": "reguetón",
+        "idioma": "bilingüe"
+    },
+    {
+        "nombre": "Despacito",
+        "artista": "Luis Fonsi ft. Daddy Yankee",
+        "año": 2017,
+        "duracion": [
+            "03:47"
+        ],
+        "genero": "reguetón",
+        "idioma": "español"
+    },
+    {
+        "nombre": "Shape of You",
+        "artista": "Ed Sheeran",
+        "año": 2017,
+        "duracion": [
+            "03:53"
+        ],
+        "genero": "pop",
+        "idioma": "inglés"
+    },
+    {
+        "nombre": "Blinding Lights",
+        "artista": "The Weeknd",
+        "año": 2020,
+        "duracion": [
+            "03:20"
+        ],
+        "genero": "synth-pop",
+        "idioma": "inglés"
+    },
+    {
+        "nombre": "Hawái",
+        "artista": "Maluma",
+        "año": 2020,
+        "duracion": [
+            "03:19"
+        ],
+        "genero": "reguetón",
+        "idioma": "español"
+    }
+]
