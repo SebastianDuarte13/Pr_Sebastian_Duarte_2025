@@ -1,0 +1,16 @@
+[
+    {
+        "customer_name": "sebas",
+        "customer_email": "sss",
+        "total_value": 10.98,
+        "products": [
+            {
+                "id": 28,
+                "title": "Ice Cream",
+                "price": 5.49,
+                "quantity": 2,
+                "total_price": 10.98
+            }
+        ]
+    }
+]
