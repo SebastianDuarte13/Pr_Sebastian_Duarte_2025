@@ -1,22 +1,19 @@
 import requests
 import json
 
-# URL de la API de productos
 PRODUCTS_API_URL = "https://dummyjson.com/products"
 SALES_FILE = "ventas.json"
 
 def load_products():
-    """Carga los productos desde la API."""
     try:
         response = requests.get(PRODUCTS_API_URL)
-        response.raise_for_status()  # Lanza un error para respuestas HTTP malas (4xx o 5xx)
+        response.raise_for_status()  
         return response.json().get('products', [])
     except requests.exceptions.RequestException as e:
         print(f"Error al cargar los productos desde la API: {e}")
         return []
 
 def load_sales():
-    """Carga las ventas desde el archivo JSON."""
     try:
         with open(SALES_FILE, 'r') as f:
             return json.load(f)
@@ -24,12 +21,10 @@ def load_sales():
         return []
 
 def save_sales(sales):
-    """Guarda las ventas en el archivo JSON."""
     with open(SALES_FILE, 'w') as f:
         json.dump(sales, f, indent=4)
 
 def start_sale(products, sales):
-    """Maneja el proceso de una nueva venta."""
     cart = []
     total_value = 0
 
@@ -68,7 +63,6 @@ def start_sale(products, sales):
                 print("No hay suficiente stock disponible.")
                 continue
 
-            # Agregar al carrito
             cart_item = {
                 "id": selected_product['id'],
                 "title": selected_product['title'],
@@ -79,7 +73,6 @@ def start_sale(products, sales):
             cart.append(cart_item)
             total_value += cart_item['total_price']
             
-            # Actualizar stock temporalmente (se hará permanente al confirmar)
             selected_product['stock'] -= quantity
 
             print("\n--- Carrito de Compras ---")
@@ -110,7 +103,6 @@ def start_sale(products, sales):
         save_sales(sales)
         print("¡Venta realizada con éxito!")
     else:
-        # Revertir el stock si la venta es cancelada
         for item in cart:
             for p in products:
                 if p['id'] == item['id']:
@@ -120,7 +112,6 @@ def start_sale(products, sales):
 
 
 def view_all_sales(sales):
-    """Muestra todas las ventas realizadas."""
     if not sales:
         print("No hay ventas registradas.")
         return
@@ -135,7 +126,6 @@ def view_all_sales(sales):
             print(f"    - {item['title']} (x{item['quantity']}) - Código: {item['id']} - Precio Unit.: ${item['price']:.2f} - Total: ${item['total_price']:.2f}")
 
 def view_sales_by_customer(sales):
-    """Busca y muestra ventas por nombre o email del cliente."""
     if not sales:
         print("No hay ventas registradas.")
         return
@@ -152,11 +142,10 @@ def view_sales_by_customer(sales):
         return
 
     print(f"\n--- Ventas para '{query}' ---")
-    view_all_sales(found_sales) # Reutilizamos la función de mostrar ventas
+    view_all_sales(found_sales) 
 
 
 def main():
-    """Función principal del programa."""
     products = load_products()
     sales = load_sales()
 
@@ -164,7 +153,6 @@ def main():
         print("No se pudieron cargar los productos. El programa no puede continuar.")
         return
 
-    # Ajustar el stock inicial con las ventas ya realizadas
     for sale in sales:
         for sold_product in sale['products']:
             for p in products:
